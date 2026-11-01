@@ -1,0 +1,27 @@
+{
+  "run_id": "20261101T210357_d59209",
+  "source_file": "orders.csv",
+  "status": "SUCCESS",
+  "start_time": "2026-11-01T21:03:57",
+  "end_time": "2026-11-01T21:03:57",
+  "chunk_size": 10000,
+  "input_rows": 20,
+  "valid_rows": 11,
+  "inserted_rows": 0,
+  "updated_rows": 0,
+  "duplicate_rows": 11,
+  "rejected_rows": 9,
+  "reject_breakdown": {
+    "missing_order_id": 1,
+    "amount_not_numeric": 1,
+    "amount_negative": 1,
+    "unknown_customer": 1,
+    "invalid_timestamp": 1,
+    "invalid_currency": 1,
+    "invalid_status": 1,
+    "event_before_order": 1,
+    "malformed_row_field_count": 1
+  },
+  "duration_seconds": 0.014,
+  "failure_reason": null
+}

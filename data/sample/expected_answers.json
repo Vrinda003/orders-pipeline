@@ -1,0 +1,11 @@
+{
+  "source_file": "orders.csv",
+  "data_rows": 20,
+  "rejects_by_reason": {
+    "missing_order_id": 1, "amount_not_numeric": 1, "amount_negative": 1,
+    "unknown_customer": 1, "invalid_timestamp": 1, "invalid_currency": 1,
+    "invalid_status": 1, "event_before_order": 1, "malformed_row_field_count": 1
+  },
+  "inserted_rows": 8, "updated_rows": 1, "duplicate_rows": 2,
+  "clean_orders": 8, "clean_amount_sum": 5317.5
+}
