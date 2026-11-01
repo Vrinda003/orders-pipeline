@@ -141,7 +141,7 @@ Measured on my laptop (Python 3.13):
 
 - **Bounded memory:** 5x more rows, same peak memory. Memory depends on chunk size, not file size.
 - **Optimization 1, bigger chunks:** 500 to 10,000 rows per chunk is about 1.9x faster (fewer commits and lookups) at the cost of about 13 MB.
-- **Optimization 2, upsert for customers:** loading customers with `INSERT OR REPLACE` made reruns very slow (about 13 s versus under 1 s in my test environment), because REPLACE deletes the row and SQLite re-checks all orders referencing it. Using `ON CONFLICT DO UPDATE` fixed it.
+- **Optimization 2, upsert for customers:** loading customers with `INSERT OR REPLACE` made reruns very slow, because REPLACE deletes the row first and SQLite then re-checks all orders referencing it. Using `ON CONFLICT DO UPDATE` avoids the delete and keeps reruns fast.
 - Memory is measured with `tracemalloc`, which counts Python memory only (not SQLite's internal memory).
 
 ## Assumptions
